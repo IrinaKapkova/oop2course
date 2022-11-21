@@ -24,7 +24,7 @@ public class Car {
             this.engineVolume = engineVolume;
         }
         if (color == null) {
-            this.color = "белый";
+            this.color = "белого";
         } else {
             this.color = color;
         }
