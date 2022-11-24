@@ -1,9 +1,13 @@
+import java.time.LocalDate;
+
 public class Main {
     public static void main(String[] args) {
         Human maxim = new Human(1988, "Максим", "Минск", "бренд-менеджером");
         System.out.println(maxim);
         Human anya = new Human(1993, "Аня", "Москва", "методист образовательных программ");
         System.out.println(anya);
+        Human vladimir = new Human(LocalDate.now().getYear()-21, "Владимир", "Казань", "безработный");
+        System.out.println(vladimir);
         Human katya = new Human(1992, "Калининград", "Минск", "продакт-менеджер");
         System.out.println(katya);
         Human artem = new Human(1995, "Артем", "Москва", "директор по развитию бизнеса");
@@ -19,5 +23,56 @@ public class Main {
         System.out.println(kiaSportage4);
         Car hyundaiAvante = new Car("Hyundai", "Avante", 1.6f, "оранжевого", 2016, "Южной Корее");
         System.out.println(hyundaiAvante);
+
+        Flower rosa = new Flower("Роза обыкновенная", "Голландия", 35.59, 4);
+        Flower chrysanthemum = new Flower("Хризантема", null, 15, 5);
+        Flower peony = new Flower("Пион", "Англия", 69.9, 1);
+        Flower gypsophila = new Flower("Гипсофила", "Турция", 19.5, 10);
+        Flower[] flowers = new Flower[]{rosa, chrysanthemum, peony, gypsophila};
+        for (Flower flower : flowers) {
+            System.out.println(flower);
+        }
+        printCostOfFlowers(
+                rosa, rosa,rosa, rosa, rosa,
+                chrysanthemum, chrysanthemum, chrysanthemum, chrysanthemum, chrysanthemum,
+                gypsophila);
     }
-}
+
+    private static void printIfo(Flower flower) {
+        System.out.println(
+                "Цветок: " + flower.getFlowerColor() +
+                        ", страна: " + flower.getCountry() +
+                        ", стоимость за штуку: " + flower.getCost() +
+                        ", срок стояния цветка: " + flower.getLifeSpan());
+    }
+
+    private static void printCostOfFlowers(Flower... flowers) {
+        double totalCost = 0;
+        int minimumLifeSpan = Integer.MAX_VALUE;
+        for (Flower flower : flowers) {
+            if (flower.getLifeSpan() < minimumLifeSpan) {
+                minimumLifeSpan = flower.getLifeSpan();
+            }
+            totalCost += flower.getCost();
+            System.out.print(flower.getFlowerColor()+", ");
+        }
+        totalCost = totalCost * 1.1;
+        System.out.printf("Букет стоит %.2f рублей. ", totalCost);
+        System.out.printf("Срок стояния букета: %d\n", minimumLifeSpan);
+
+    }
+//        Bouquet(rosa, chrysanthemum, peony, gypsophila);
+//        public static void Bouquet(Flower...) {
+//            double cost = 0;
+//            int minSpan = Integer.MAX_VALUE;
+//            for (Flower flowers : flower) {
+//                double percent = flowers.getCost() * 10 / 100;
+//                cost += flowers.getCost()+percent;
+//                if (flowers.getLifeSpan() < minSpan) {
+//                    minSpan = flowers.getLifeSpan();
+//                }
+//            }
+//            System.out.printf("Букет стоит %.2f рублей. ", cost);
+//            System.out.printf("Дней стояния %d\n", minSpan);
+//        }
+ }
