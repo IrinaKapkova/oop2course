@@ -6,7 +6,7 @@ public class Main {
         System.out.println(maxim);
         Human anya = new Human(1993, "Аня", "Москва", "методист образовательных программ");
         System.out.println(anya);
-        Human vladimir = new Human(LocalDate.now().getYear()-21, "Владимир", "Казань", "безработный");
+        Human vladimir = new Human(LocalDate.now().getYear() - 21, "Владимир", "Казань", "безработный");
         System.out.println(vladimir);
         Human katya = new Human(1992, "Калининград", "Минск", "продакт-менеджер");
         System.out.println(katya);
@@ -15,7 +15,7 @@ public class Main {
         System.out.println("Задача 3");
         Car ladaGranta = new Car("Lada", "Granta", 1.7f, "желтого", 2015, "России");
         System.out.println(ladaGranta);
-        Car audiA8 = new Car ("Audi", "A8", 3.0f, "черного", 2020, "Германии");
+        Car audiA8 = new Car("Audi", "A8", 3.0f, "черного", 2020, "Германии");
         System.out.println(audiA8);
         Car bmvZ8 = new Car("BMW", "Z8", 3.0f, "черного", 2021, "Германии");
         System.out.println(bmvZ8);
@@ -33,7 +33,7 @@ public class Main {
             System.out.println(flower);
         }
         printCostOfFlowers(
-                rosa, rosa,rosa, rosa, rosa,
+                rosa, rosa, rosa, rosa, rosa,
                 chrysanthemum, chrysanthemum, chrysanthemum, chrysanthemum, chrysanthemum,
                 gypsophila);
     }
@@ -54,25 +54,11 @@ public class Main {
                 minimumLifeSpan = flower.getLifeSpan();
             }
             totalCost += flower.getCost();
-            System.out.print(flower.getFlowerColor()+", ");
+            System.out.print(flower.getFlowerColor() + ", ");
         }
         totalCost = totalCost * 1.1;
         System.out.printf("Букет стоит %.2f рублей. ", totalCost);
         System.out.printf("Срок стояния букета: %d\n", minimumLifeSpan);
 
     }
-//        Bouquet(rosa, chrysanthemum, peony, gypsophila);
-//        public static void Bouquet(Flower...) {
-//            double cost = 0;
-//            int minSpan = Integer.MAX_VALUE;
-//            for (Flower flowers : flower) {
-//                double percent = flowers.getCost() * 10 / 100;
-//                cost += flowers.getCost()+percent;
-//                if (flowers.getLifeSpan() < minSpan) {
-//                    minSpan = flowers.getLifeSpan();
-//                }
-//            }
-//            System.out.printf("Букет стоит %.2f рублей. ", cost);
-//            System.out.printf("Дней стояния %d\n", minSpan);
-//        }
- }
+}
