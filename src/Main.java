@@ -32,7 +32,7 @@ public class Main {
         for (Flower flower : flowers) {
             System.out.println(flower);
         }
-        printCostOfFlowers(
+        printCostTotalFlowers(
                 rosa, rosa, rosa, rosa, rosa,
                 chrysanthemum, chrysanthemum, chrysanthemum, chrysanthemum, chrysanthemum,
                 gypsophila);
@@ -46,7 +46,7 @@ public class Main {
                         ", срок стояния цветка: " + flower.getLifeSpan());
     }
 
-    private static void printCostOfFlowers(Flower... flowers) {
+    private static void printCostTotalFlowers(Flower... flowers) {
         double totalCost = 0;
         int minimumLifeSpan = Integer.MAX_VALUE;
         for (Flower flower : flowers) {
